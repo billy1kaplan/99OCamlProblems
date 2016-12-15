@@ -1,0 +1,5 @@
+"Rule: ocaml: ml & cmi -> cmx & o (%=p1 )": "\006\161{\211|%\017J\215\017\187S\215DSY"
+"Resource: /home/billy/Projects/OCaml/99Problems/p1.ml": "\\~\157U\023\155Jc'L\1810\211\192\161\202"
+"Rule: ocaml: cmx* & o* -> native (%=p1 )": "\179\026M\226.(\211\213\211\235v\029\175r\166\144"
+"Rule: ocaml dependencies ml (%=p1 )": "\250\127#\133+\016\166|\t\144([\003GxJ"
+"Rule: ocaml: ml -> cmo & cmi (%=p1 )": "\212\031\202\158:O\018\154SlKl\164:'z"
