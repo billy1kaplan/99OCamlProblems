@@ -16,3 +16,9 @@ let () = print_newline ()
      * | _::tl -> aux (n+1) tl
    * in aux 0 list;;
 *)
+
+(*Best version
+ * let rec length = function
+   * | [] -> 0
+   * | _::tl -> 1 + length tl
+*) 
