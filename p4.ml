@@ -17,7 +17,7 @@ let () = print_newline ()
    * in aux 0 list;;
 *)
 
-(*Best version
+(* Doesn't use tail recursion, only works on short lists
  * let rec length = function
    * | [] -> 0
    * | _::tl -> 1 + length tl
