@@ -10,5 +10,7 @@ let f x =
   | Some (a, b) -> print_endline (a ^ ", " ^ b)
   | None -> print_endline "None"
 
+(* CR: indentation wrong
+       use semicolon instead of multiple main statements *)
   let () = f (last_two ["a"; "b"; "c"; "d"])
   let () = f (last_two [])
