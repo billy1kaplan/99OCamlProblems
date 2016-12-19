@@ -5,8 +5,7 @@ let rec last = function
   | [x] -> Some x
   | _::tl -> last tl
 
-let f x = 
-  match x with
+let f = function
   | Some c -> print_endline c 
   | None -> print_endline "None"
 

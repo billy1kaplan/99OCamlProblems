@@ -7,8 +7,8 @@ type 'a node =
 let flatten nodes = 
   let rec aux base = function 
     | [] -> base
-    | One a::tl -> aux (base@[a]) tl
-    | Many entries::tl -> aux (aux base entries) tl
+    | (One a)::tl -> aux (base@[a]) tl
+    | (Many entries)::tl -> aux (aux base entries) tl
   in aux [] nodes
 
 let print_list list = 
