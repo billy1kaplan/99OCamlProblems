@@ -5,12 +5,11 @@ let rec last_two = function
   | [x;y] -> Some (x, y)
   | _::tl -> last_two tl
 
-let f x = 
-  match x with
-  | Some (a, b) -> print_endline (a ^ ", " ^ b)
-  | None -> print_endline "None"
+let f x = Option.value_map  x ~default:"None" ~f:(fun x -> 
+          let (a,b) = x in (a^", "^b))
+          |> print_endline
 
-(* CR: indentation wrong
+(* XCR: indentation wrong
        use semicolon instead of multiple main statements *)
-  let () = f (last_two ["a"; "b"; "c"; "d"])
-  let () = f (last_two [])
+let () = f (last_two ["a"; "b"; "c"; "d"]);
+         f (last_two [])
