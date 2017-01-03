@@ -1,5 +1,6 @@
 open Core.Std
 
+(* CR: don't use "list" as a variable name since it conflicts with the keyword list *)
 let extract k list = 
   let rec aux k cur acc = function
     | [] -> List.map ~f:List.rev acc
@@ -10,6 +11,7 @@ let extract k list =
             else ...
             unless it's all one line
             if ... then ... else ... *)
+        (* CR: dam *)
         if k = 1 then aux k cur ((h::cur)::acc) t else
           aux k cur (aux (k-1) (h::cur) acc t) t
   in 
