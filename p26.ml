@@ -1,6 +1,5 @@
 open Core.Std
 
-(* CR: don't use "list" as a variable name since it conflicts with the keyword list *)
 let extract k lst = 
   let rec aux k cur acc = function
     | [] ->  acc
@@ -11,9 +10,12 @@ let extract k lst =
   in 
   List.map ~f:List.rev (aux k [] [] lst)
 
+  (* Check lengths to take care of possible duplicates issue,
+   * doesn't explicitly check for duplicates but assumes properly formed test case *)
 let check list1 list2 =
-  List.fold ~init:true ~f:(fun acc item -> 
-    if acc then List.mem list2 item else false) list1;;
+  List.length list1 = List.length list2 &&
+  (List.fold ~init:true ~f:(fun acc item -> 
+    if acc then List.mem list2 item else false) list1)
 
 let () = 
   assert(check [["c"; "d"]; ["b"; "d"]; ["b"; "c"]; ["a"; "d"]; ["a"; "c"]; ["a"; "b"]] 
