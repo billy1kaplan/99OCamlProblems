@@ -1,6 +1,6 @@
 open Core.Std
 
-let extract k lst = 
+let extract k lst =
   let rec aux k cur acc = function
     | [] ->  acc
     | h :: t -> 
